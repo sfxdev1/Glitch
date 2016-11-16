@@ -15,10 +15,11 @@ public class MovementScript : MonoBehaviour
 
     void Update()
     {
+        transform.rotation = new Quaternion(transform.rotation.x,cam.transform.rotation.y,transform.rotation.z,transform.rotation.w);
         CharacterController controller = GetComponent<CharacterController>();
         if (Input.GetKey(KeyCode.W))
         {
-            controller.SimpleMove(transform.forward * speed * Time.deltaTime);
+            controller.SimpleMove(transform.forward * speed);
             /*transform.Translate(transform.forward*speed*Time.deltaTime)*/;
         }
     }

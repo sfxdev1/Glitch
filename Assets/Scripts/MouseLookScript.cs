@@ -11,12 +11,11 @@ public class MouseLookScript : MonoBehaviour {
 	float xRotVel;
     public float lookSmoothDamp = 0.5f;
     public bool inverted;
-    private Transform t;
-    private Transform parent;
+    //public GameObject parent;
+
 	// Use this for initialization
 	void Start () {
-        t = GetComponent<Transform>();
-        parent = GetComponentInParent<Transform>();
+        //parent = GetComponentInParent<Transform>();
         SetCursorState();
 	}
 	
@@ -30,7 +29,7 @@ public class MouseLookScript : MonoBehaviour {
 
         currentXRot = Mathf.Clamp(currentXRot, -90, 90);
 
-	    parent.rotation = Quaternion.Euler(0,currentYRot,0f);
+	    //parent.rotation = Quaternion.Euler(0,currentYRot,0f);
 	    transform.rotation = Quaternion.Euler(currentXRot,currentYRot,0);
 	}
 
